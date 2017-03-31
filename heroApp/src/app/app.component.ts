@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+
+
+export class Autentication {
+  nomeUtente: string;
+  password: string;
+}
+
 export class Hero {
   id: number;
   name: string;
@@ -23,8 +30,8 @@ const HEROES: Hero[] = [
 export class AppComponent {
   title = 'Tour of Heroes';
   selectedHero: Hero;
-  heroes= HEROES;
- 
+  heroes = HEROES;
+
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
