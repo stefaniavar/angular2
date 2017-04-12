@@ -1,0 +1,30 @@
+
+<p>administration works!</p>
+<!-- <md-list> -->
+<!-- <h3 md-subheader>Elenco</h3> -->
+<!-- <md-list-item *ngFor="let user of getListaUtenti()"> -->
+<!-- 	<md-input-container> <input mdInput -->
+<!-- 		placeholder="Nome" value={{user.nome}} /> <br> -->
+<!-- 	<input mdInput placeholder="Cognome" value={{user.cognome}} /> 	</md-input-container> -->
+<!-- </div> -->
+<!-- <md-divider></md-divider> </md-list-item> </md-list> -->
+<md-grid-list cols="6" rowHeight="80px" md-gutter="2px">
+<md-grid-tile
+	*ngFor="let user of getListaUtenti();index as i; odd as isOdd; even as isEven"
+	[colspan]="5" [rowspan]="1" [class.odd]="isOdd" [class.even]="isEven">
+
+<div>
+	<md-input-container> <input mdInput
+		placeholder="Nome" value={{user.nome}} /></md-input-container>
+	<md-input-container> <input mdInput
+		placeholder="Cognome" value={{user.cognome}} /></md-input-container>
+	<md-input-container> <input mdInput
+		placeholder="Mail" value={{user.mail}} /></md-input-container>
+	<md-input-container> <input mdInput
+		placeholder="Data di nascita" value={{user.dataNascita}} type="date" />
+	</md-input-container>
+	<button color="primary" md-raised-button id="delete"
+		(click)="openDialog(user.mail)" name="action">Elimina</button>
+	
+</div>
+</md-grid-tile></md-grid-list>

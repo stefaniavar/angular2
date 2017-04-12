@@ -1,0 +1,30 @@
+<head>
+<link href="https://fonts.googleapis.com/css?family=Roboto"
+	rel="stylesheet" type="text/css">
+<script src="https://apis.google.com/js/api:client.js"></script>
+<link rel="import" id="template-file" href="template.html">
+</head>
+<
+<ul>
+	<div id="googleBtn">
+		<li><button color="primary" md-raised-button id="googleBtn"
+				(click)="attachSignin()" name="action">Accedi con Google</button></li>
+	</div>
+	<li>
+		<div hidden id='divLog'>
+			<button color="secondary" md-raised-button id="logout"
+				(click)="logout()" name="logout">Logout</button>
+		</div>
+	</li>
+	<li>
+		<div id=txtBenvenuto></div>
+	</li>
+
+</ul>
+<!--  <p>login-google works!</p> -->
+<div id='mexLogout'></div>
+<div id='userList' hidden>
+	<md-grid-list cols="4" rowHeight="100px"> <md-grid-tile
+		[colspan]="2" [rowspan]="1"> 1 righe 2 colonna </md-grid-tile> <md-grid-tile
+		[colspan]="1" [rowspan]="2"> 1 colonna 2 righe </md-grid-tile> </md-grid-list>
+</div>
