@@ -1,7 +1,11 @@
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
   <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-    <div class="mdl-layout__header-row">
+   <div class="mdl-layout__header-row">
       <span class="mdl-layout-title">Home</span>
+       
       <div class="mdl-layout-spacer"></div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
         <div id="tt4" class="icon material-icons">share</div>
@@ -11,7 +15,7 @@
       </div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
         <label class="mdl-button mdl-js-button mdl-button--icon" for="logout">
-          <i class="material-icons">person pin<a (click)="logout()" href="#"></a></i>
+         <a (click)="logout()" href="#"><i class="material-icons">person pin</i></a> 
          </label>
 
         <div class="mdl-textfield__expandable-holder">
@@ -35,9 +39,7 @@
       <div class="demo-avatar-dropdown">
         <span>Welcome {{user.nome}}</span>
         <ul>
-        <!--  <li *ngFor="user of p_users"><span>{{p_users.nome}}</span>
-            </li>-->
-          </ul>
+         </ul>
         <div class="mdl-layout-spacer"></div>
         <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
               <i class="material-icons" role="presentation">arrow_drop_down</i>
@@ -52,15 +54,16 @@
     </header>
     <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Dashboard</a>
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">face</i>UpdateProfile</a>
+      <a [routerLink]="['Update'] " class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">face</i>UpdateProfile</a>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">history</i>History</a>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Purchases</a>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
       <div class="mdl-layout-spacer"></div>
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+    <!--  <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>-->
     </nav>
+    
   </div>
   <main class="mdl-layout__content mdl-color--grey-100">
     <div class="mdl-grid demo-content">
@@ -107,8 +110,7 @@
               <td>{{user.dateofBirth}}</td>
               <td>{{user.country}}</td>
             </tr>
-
-          </tbody>
+         </tbody>
         </table>
       </div>
       <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
@@ -162,7 +164,9 @@
         </div>
       </div>
     </div>
+    
   </main>
+  
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
   <defs>
@@ -210,6 +214,15 @@
       </g>
     </g>
   </defs>
-</svg>
+ </svg>
+ <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+      <div class="mdl-logo">S2E</div>
+      <ul class="mdl-mini-footer__link-list">
+        <li><a href="#">Privacy</a>
+       </ul>   
+       </div>
+</footer>
 <a href="#" target="_blank" id="view-source"
   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a>
+  
