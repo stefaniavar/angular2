@@ -1,0 +1,86 @@
+<router-outlet></router-outlet>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Update</span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <div class="demo-card-wide mdl-card mdl-shadow--2p">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text"><i class="material-icons mdl-list__item-avatar">person</i> &nbsp; Profile</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <ul class="demo-list-item mdl-list">
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">Nome</span>{{user.nome}} &nbsp; &nbsp;
+                        </li>
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">Cognome</span>{{user.cognome}} &nbsp; &nbsp;
+                        </li>
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">Email</span>{{user.email}} &nbsp; &nbsp;
+                        </li>
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">Password</span>
+                            <button type="button" class="mdl-button mdl-js-button show-modal mdl-button--colored">change</button> &nbsp; &nbsp;
+                            <dialog class="mdl-dialog">
+                                <p>Are u sure to change password?
+                                </p>
+                            </dialog>
+                            <script>
+                                var dialog = document.querySelector('dialog');
+                                var showModalButton = document.querySelector('.show-modal');
+                                if (!dialog.showModal) {
+                                    dialogPolyfill.registerDialog(dialog);
+                                }
+                                showModalButton.addEventListener('click', function () {
+                                    dialog.showModal();
+                                });
+                                dialog.querySelector('.close').addEventListener('click', function () {
+                                    dialog.close();
+                                });
+                            </script>
+                        </li>
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">Residenza</span>{{user.country}}  &nbsp; &nbsp;
+                        </li>
+                    </ul>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Save</button>   
+                </div>
+                <div class="mdl-card__menu">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                        <i class="material-icons">share</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+   </div>
+<footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo">S2E</div>
+            <ul class="mdl-mini-footer__link-list">
+                <li><a href="#">Privacy</a>
+            </ul>
+        </div>
+</footer>
